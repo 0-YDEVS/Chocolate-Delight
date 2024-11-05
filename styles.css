@@ -1,0 +1,586 @@
+/* Variables CSS */
+:root {
+    --main-bg-color: #1b1b1b;
+    --secondary-bg-color: #2c2c2c;
+    --text-color: #e0e0e0;
+    --accent-color: saddlebrown;
+    --hover-accent-color: #b5651d;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Lora', serif;
+}
+
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-image: url('images/chocolate-background.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin: 0;
+}
+
+header .overlay {
+    padding: 40px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-family: var(--font-secondary);
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(8px); /* Compatibilité Safari */
+    backdrop-filter: blur(8px);
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a i {
+    margin-right: 8px;
+}
+
+
+nav ul li a:hover {
+    background-color: var(--hover-accent-color);
+}
+
+/* Section Styling */
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Adjusts height for better centering */
+
+    padding: 80px 20px;
+    color: var(--text-color);
+}
+
+.home-heading {
+    font-family: var(--font-secondary);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: fadeInUp 1.2s ease-out; /* Smooth fade-in effect */
+}
+
+.home-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    animation: fadeInUp 1.5s ease-out; /* Slight delay for staggered effect */
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Button Styling */
+.btn-primary {
+    padding: 12px 30px; /* Enhanced padding for better visuals */
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-accent-color);
+    transform: scale(1.05); /* Adds a slight zoom on hover */
+}
+
+
+/* Section Styling */
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #3e2723 0%, #4e342e 100%);
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated Heading */
+.about-heading {
+    font-family: var(--font-secondary);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+    animation: slideInLeft 1.2s ease-out;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Enhanced About Text */
+.about-text {
+    font-size: 1.2rem;
+    max-width: 700px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease-out;
+    padding: 0 15px;
+}
+
+/* Keyframes for Animations */
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+/* Section Styling */
+#products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 80px 20px;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    text-align: center;
+}
+
+.products-heading {
+    font-family: var(--font-secondary);
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #f8f8f8;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Product Grid */
+.product-container {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    padding: 20px;
+    max-width: 100%;
+}
+
+/* Product Card Styling */
+.product-card {
+    background-color: var(--secondary-bg-color);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Styling with Zoom Effect */
+.product-card img {
+    width: 50%;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Product Title */
+.product-card h3 {
+    margin: 20px 0 10px;
+    font-size: 1.6rem;
+    color: #f1f1f1;
+    text-transform: uppercase;
+}
+
+/* Product Description */
+.product-card p {
+    font-size: 1rem;
+    color: #d3d3d3;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+.btn-secondary {
+    padding: 10px 25px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--hover-accent-color);
+    transform: scale(1.05);
+}
+
+/* Keyframe Animation for Heading */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.payment-option {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: var(--accent-color);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.payment-option:hover {
+    background-color: var(--hover-accent-color);
+}
+
+
+/* Credit Card Form Styling */
+.credit-card-form {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.credit-card-form h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.credit-card-form label {
+    font-size: 0.9rem;
+    color: #333;
+    margin-top: 10px;
+    display: block;
+}
+
+.credit-card-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.credit-card-form .btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.credit-card-form .btn-secondary:hover {
+    background-color: var(--hover-accent-color);
+}
+
+
+/* Common Styling for Payment Forms */
+.payment-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.payment-form h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.payment-form p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.payment-form .btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.payment-form .btn-secondary:hover {
+    background-color: var(--hover-accent-color);
+}
+
+/* Hide all payment forms by default */
+#creditCardForm,
+#paypalForm,
+#applePayForm {
+    display: none;
+}
+
+
+/* Section Contact Styling */
+#contact {
+    padding: 80px 20px;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    text-align: center;
+}
+
+#contact h2 {
+    font-family: var(--font-secondary);
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #d3d3d3;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--secondary-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+form label {
+    text-align: left;
+    font-size: 1rem;
+    color: #f0f0f0;
+    font-weight: 500;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: #3b3b3b;
+    color: #f0f0f0;
+    font-size: 1rem;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--hover-accent-color);
+    outline: none;
+}
+
+form button {
+    align-self: center;
+    padding: 12px 30px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: var(--hover-accent-color);
+}
+
+/* Map Styling */
+.map-container {
+    margin-top: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-frame {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background: linear-gradient(135deg, #3e2723 0%, #4e342e 100%);
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--button-hover-color); /* Couleur d'accentuation au survol */
+}
+
+.footer-links li a i {
+    margin-right: 8px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--hover-accent-color);
+}
+
+/* Animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
